@@ -1,16 +1,21 @@
-# sample_flavor
+# Flutter Environment Configuration Example
 
-A new Flutter project.
+This project demonstrates how to manage multiple environments (development, staging, production) in Flutter using:
 
-## Getting Started
+- `--dart-define` and build flavors for compile-time configuration
+- `.env` files with [`flutter_dotenv`](https://pub.dev/packages/flutter_dotenv) for runtime environment variables
 
-This project is a starting point for a Flutter application.
+## 📦 Why This Setup?
 
-A few resources to get you started if this is your first Flutter project:
+Hardcoding API URLs or manually toggling flags across environments doesn’t scale — especially when working with CI/CD, testing, or debugging. This setup ensures clean, scalable, and secure environment handling.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🚀 Running the App
+
+Use the appropriate build flavor and `--dart-define` to load the correct `.env` file:
+
+```bash
+flutter run --dart-define=FLAVOR=dev
+flutter run --dart-define=FLAVOR=staging
+flutter run --dart-define=FLAVOR=prod
